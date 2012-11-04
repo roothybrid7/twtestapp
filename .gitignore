@@ -1,0 +1,363 @@
+*~
+*swp
+*.bk
+
+# Added by gemignore. Snippet 'Autotools'
+# http://www.gnu.org/software/automake
+
+Makefile.in
+
+# http://www.gnu.org/software/autoconf
+
+/autom4te.cache
+/aclocal.m4
+/compile
+/configure
+/depcomp
+/install-sh
+/missing
+
+
+# Added by gemignore. Snippet 'Compass'
+.sass-cache
+
+
+# Added by gemignore. Snippet 'Global/Archives'
+# It's better to unpack these files and commit the raw source because
+# git has its own built in compression methods.
+*.7z
+*.jar
+*.rar
+*.zip
+*.gz
+*.bzip
+*.xz
+*.lzma
+
+#packing-only formats
+*.iso
+*.tar
+
+#package management formats
+*.dmg
+*.xpi
+*.gem
+*.egg
+*.deb
+*.rpm
+
+# Added by gemignore. Snippet 'Global/Eclipse'
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpath
+
+
+# Added by gemignore. Snippet 'Global/Emacs'
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+
+# Added by gemignore. Snippet 'Global/Linux'
+.*
+!.gitignore
+*~
+
+# KDE
+.directory
+
+
+# Added by gemignore. Snippet 'Global/OSX'
+.DS_Store
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+
+# Added by gemignore. Snippet 'Global/SASS'
+### SASS Ignores - "Sassy CSS" http://sass-lang.com/
+.sass-cache
+
+
+# Added by gemignore. Snippet 'Global/SVN'
+.svn/
+
+
+# Added by gemignore. Snippet 'Global/Tags'
+# Ignore tags created by etags and ctags
+TAGS
+!TAGS/
+tags
+!tags/
+
+
+# Added by gemignore. Snippet 'Global/TextMate'
+*.tmproj
+*.tmproject
+tmtags
+
+
+# Added by gemignore. Snippet 'Global/Windows'
+# Windows image file caches
+Thumbs.db 
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+
+# Added by gemignore. Snippet 'Global/vim'
+.*.sw[a-z]
+*.un~
+Session.vim
+
+
+# Added by gemignore. Snippet 'Node'
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+
+
+# Added by gemignore. Snippet 'Rails'
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+/.bundle
+/vendor/bundle
+/log/*
+/tmp/*
+/db/*.sqlite3
+/public/system/*
+/coverage/
+/spec/tmp/*
+**.orig
+rerun.txt
+pickle-email-*.html
+
+# Added by gemignore. Snippet 'Ruby'
+*.gem
+*.rbc
+.bundle
+.config
+coverage
+InstalledFiles
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+
+# YARD artifacts
+.yardoc
+_yardoc
+doc/
+
+node_modules/
+
+
+# Added by gemignore. Snippet 'Autotools'
+# http://www.gnu.org/software/automake
+
+Makefile.in
+
+# http://www.gnu.org/software/autoconf
+
+/autom4te.cache
+/aclocal.m4
+/compile
+/configure
+/depcomp
+/install-sh
+/missing
+
+
+# Added by gemignore. Snippet 'Compass'
+.sass-cache
+
+
+# Added by gemignore. Snippet 'Global/Archives'
+# It's better to unpack these files and commit the raw source because
+# git has its own built in compression methods.
+*.7z
+*.jar
+*.rar
+*.zip
+*.gz
+*.bzip
+*.bz2
+*.xz
+*.lzma
+
+#packing-only formats
+*.iso
+*.tar
+
+#package management formats
+*.dmg
+*.xpi
+*.gem
+*.egg
+*.deb
+*.rpm
+
+
+# Added by gemignore. Snippet 'Global/Emacs'
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+.elc
+auto-save-list
+tramp
+.\#*
+
+# Org-mode
+.org-id-locations
+*_archive
+
+
+# Added by gemignore. Snippet 'Global/Linux'
+.*
+!.gitignore
+*~
+
+
+# Added by gemignore. Snippet 'Global/OSX'
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+
+# Added by gemignore. Snippet 'Global/SASS'
+### SASS Ignores - "Sassy CSS" http://sass-lang.com/
+*.sass-cache
+
+
+# Added by gemignore. Snippet 'Global/SVN'
+.svn/
+
+
+# Added by gemignore. Snippet 'Global/SublimeText'
+# SublimeText project files
+*.sublime-workspace
+
+
+# Added by gemignore. Snippet 'Global/Tags'
+# Ignore tags created by etags and ctags
+TAGS
+!TAGS/
+tags
+!tags/
+
+
+# Added by gemignore. Snippet 'Global/TextMate'
+*.tmproj
+*.tmproject
+tmtags
+
+
+# Added by gemignore. Snippet 'Global/VirtualEnv'
+# Virtualenv
+# http://iamzed.com/2009/05/07/a-primer-on-virtualenv/
+.Python
+[Bb]in
+[Ii]nclude
+[Ll]ib
+[Ss]cripts
+
+
+# Added by gemignore. Snippet 'Global/Windows'
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+
+# Added by gemignore. Snippet 'Global/vim'
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# Added by gemignore. Snippet 'Node'
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log

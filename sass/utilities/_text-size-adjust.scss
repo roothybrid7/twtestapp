@@ -1,0 +1,6 @@
+// CSS Extension: Sass 3.1.20
+// Sass Framework: Compass 0.12.2
+
+@mixin text-size-adjust($value: none) {
+  @include experimental(text-size-adjust, $value);
+}
