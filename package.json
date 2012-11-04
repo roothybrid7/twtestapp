@@ -1,0 +1,25 @@
+{
+  "name": "twtestapp",
+  "version": "0.0.0",
+  "description": "Twitter test app",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "grunt": "grunt"
+  },
+  "author": {
+    "name": "Satoshi Ohki",
+    "email": "roothybrid7@gmail.com"
+  },
+  "noAnalyze": true,
+  "dependencies": {
+    "grunt": "0.3.10",
+    "grunt-contrib": "~0.1.1",
+    "grunt-compass": "~0.2.14",
+    "grunt-growl": "~0.1.1",
+    "grunt-reload": "~0.2.0",
+    "underscore": "~1.3.3",
+    "jquery": "~1.7.3"
+  }
+}

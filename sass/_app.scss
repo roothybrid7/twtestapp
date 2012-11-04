@@ -1,0 +1,72 @@
+body {
+  @include text-size-adjust;
+}
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.container {
+  margin: 0 auto;
+}
+h1 {
+  @include background(url("../img/title.png"), linear-gradient(bottom, #333, #777));
+//  @include background(linear-gradient(bottom, #333, #777));
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 15px;
+}
+.tw-form {
+  padding: 5px 15px 5px 5px;
+
+  .tw-search {
+    @include border-radius;
+    width: 95%;
+    height: 20px;
+    padding: 5px;
+    margin: 5px 10px;
+    border: 1.5px solid #ccc;
+    font-size: 14px;
+  }
+}
+.tw-content {
+  padding: 10px 10px 10px 75px;
+  position: relative;
+  min-height: 48px;
+
+  &:nth-child(odd) {
+    @include box-shadow(#999 0px 0px 10px inset);
+    @include background(url("../img/column-bg.png"));
+  }
+  .avatar {
+    @include border-radius;
+    @include single-box-shadow;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    width: 48px;
+    height: 48px;
+  }
+  p {
+    margin: 5px;
+    word-wrap: break-word;
+
+    &.user {
+      font-weight: bold;
+
+      a {
+        color: #333;
+      }
+    }
+
+    &.text a {
+      color: #636999;
+    }
+  }
+}
+

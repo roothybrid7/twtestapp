@@ -1,0 +1,62 @@
+.loading {
+  @include border-radius;
+  width: 30px;
+  height: 30px;
+  margin: 15px auto;
+  position: relative;
+
+  &.bar {
+    div {
+      @include border-radius(2px);
+      @include animation(tw-loading, 1.2s, linear, $count:infinite);
+      width: 4px;
+      height: 15px;
+      background: black;
+      position: absolute;
+      top: 35px;
+      left: 45px;
+      opacity: 0.05;
+
+      // operation variables.
+      $degree-step: 30deg;
+      $animation-delay: 0.0s;
+
+      @for $i from 1 through 12 {
+        &:nth-child(#{$i}) {
+          @include transform(rotate(#{$degree-step * ($i - 1)}) translate(0, -20px));
+          @include animation($delay:#{$animation-delay});
+        }
+        $animation-delay: $animation-delay + 0.1;
+      }
+    }
+  }
+}
+
+/*!
+ * Animation: tw-loading
+ */
+@-webkit-keyframes tw-loading {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes tw-loading {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes tw-loading {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+

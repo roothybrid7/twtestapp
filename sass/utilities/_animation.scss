@@ -1,0 +1,30 @@
+// CSS Extension: Sass 3.1.20
+// Sass Framework: Compass 0.12.2
+
+@mixin animation(
+  $name: false,       // animation-name.
+  $duration: false,   // animation-duration.
+  $function: false,   // animation-timing-function(ease | linear | ease-in | ease-out | ease-in-out).
+  $delay: false,      // animation-delay.
+  $count: false,      // animation-iteration-count(number[0...n] | infinite).
+  $direction: false  // animation-direction(normal | alternate).
+) {
+  @if $name!=false {
+    @include experimental(animation-name, $name);
+  }
+  @if $duration!=false {
+    @include experimental(animation-duration, $duration);
+  }
+  @if $function!=false {
+    @include experimental(animation-timing-function, $function);
+  }
+  @if $delay!=false {
+    @include experimental(animation-delay, $delay);
+  }
+  @if $count!=false {
+    @include experimental(animation-iteration-count, $count);
+  }
+  @if $direction!=false {
+    @include experimental(animation-direction, $direction);
+  }
+}
