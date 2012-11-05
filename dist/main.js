@@ -16,6 +16,25 @@
 
 
 /**
+ * coreext.js - Implements undefined core feature.
+ */
+
+;(function(global, undefined) {
+  'use strict';
+
+  /**
+   * Extend object.
+   */
+  if (typeof Object.create !== 'function') {
+    Object.create = function(o) {
+      var F = function() {};
+      F.prototype = o;
+      return new F();
+    }
+  }
+}());
+
+/**
  * iterator.js - Data iterator.
  */
 
@@ -105,7 +124,9 @@
 ;(function(global, $, undefined) {
   'use strict';
 
-  global.App.Tweet = (function() {
+  var App = global.App;
+
+  App.Tweet = (function() {
     /**
      * compact array by removing 0, false, false, '' and undefined.
      *

@@ -5,7 +5,9 @@
 ;(function(global, $, undefined) {
   'use strict';
 
-  global.App.Tweet = (function() {
+  var App = global.App;
+
+  App.Tweet = (function() {
     /**
      * compact array by removing 0, false, false, '' and undefined.
      *
