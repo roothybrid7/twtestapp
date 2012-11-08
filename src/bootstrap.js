@@ -1,5 +1,5 @@
 /*!
- * bootstrap.js - Setup scripts with Loading application.
+ * bootstrap.js - Setup and Load application.
  */
 
 ;(function(global, $, undefined) {

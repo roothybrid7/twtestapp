@@ -23,14 +23,22 @@
         '<div></div>',
         '</div>'
       ].join(''),
-      isDefinedOrNotNull: function(object) {
-        return (typeof object !== 'undefined' || object !== null);
-      },
-      compact: function(array) {
-        var arr = $.isArray(array) ? array : [array];
-        return $.grep(arr, function(val, i) {
-          return !!val;
-        });
+      /**
+       * Tweet view html string.
+       *
+       * @param {string} avatar An avatar image path.
+       * @param {string} userLink User profile page url.
+       * @param {string} text A Tweet string.
+       * @return {string} Created Tweet HTML string.
+       */
+      tweetView: function(avatar, userLink, text) {
+        return [
+          '<div class="tw-content">',
+          '<img class="avatar" src="' + avatar + '" />',
+          '<p class="user">' + userLink + '</p>',
+          '<p class="text">' + text + '</p>',
+          '</div>'
+        ].join('');
       },
       createAnchor: function(url, text) {
         return [
