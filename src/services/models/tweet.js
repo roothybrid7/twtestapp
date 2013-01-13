@@ -5,20 +5,10 @@
 ;(function(global, $, undefined) {
   'use strict';
 
-  global.App.Tweet = (function() {
-    /**
-     * compact array by removing 0, false, false, '' and undefined.
-     *
-     * @param {Array} array An source array.
-     * @return {Array} The compacted array.
-     */
-    function compact(array) {
-      var arr = $.isArray(array) ? array : [array];
-      return $.grep(arr, function(val, i) {
-        return !!val;
-      });
-    }
+  var App = global.App,
+      functions = App.functions;
 
+  App.Tweet = (function() {
     /**
      * @type {Object} Parse link patterns in text.
      */
@@ -105,7 +95,7 @@
        * @return {Array} split token string list.
        */
       parseText: function(text, key) {
-        return compact(text.split(patterns[key]));
+        return functions.compact(text.split(patterns[key]));
       },
       _updateAttributes: function(attributes) {
         this._attributes = $.extend(

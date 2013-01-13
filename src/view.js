@@ -5,7 +5,8 @@
 ;(function(global, $, undefined) {
   'use strict';
 
-  var App = global.App;
+  var App = global.App,
+      functions = App.functions;
 
   App.View = (function() {
     // A signleton pointer.
@@ -37,7 +38,7 @@
             $search = $('.tw-search'),
             keyword = $search.val();
         $search.blur();
-        if (this.isDefinedOrNotNull(keyword)) {
+        if (functions.isDefinedOrNotNull(keyword)) {
           this.search(keyword);
         }
       },
@@ -98,13 +99,7 @@
           });
         dfd.resolve(item, text, ['url', 'user', 'hash']);
 
-        return [
-          '<div class="tw-content">',
-          '<img class="avatar" src="' + item.get('profile_image_url') + '" />',
-          '<p class="user">' + userLink + '</p>',
-          '<p class="text">' + text + '</p>',
-          '</div>'
-        ].join('');
+        return this.tweetView(item.get('profile_image_url'), userLink, text);
       },
       /**
        * テキスト中のリンク文字列を<a>タグに置き換え

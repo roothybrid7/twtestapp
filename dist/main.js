@@ -1,4 +1,4 @@
-/*! twtestapp - v0.0.0 - 2012-11-05
+/*! twtestapp - v0.0.0 - 2012-11-08
 * Copyright (c) 2012 Satoshi Ohki; Licensed  */
 
 /*!
@@ -14,6 +14,55 @@
 
 }(this));
 
+
+/**
+ * coreext.js - Implements undefined core feature.
+ */
+
+;(function(global, undefined) {
+  'use strict';
+
+  /**
+   * Extend object.
+   */
+  if (typeof Object.create !== 'function') {
+    Object.create = function(o) {
+      var F = function() {};
+      F.prototype = o;
+      return new F();
+    }
+  }
+}());
+
+/**
+ * functions.js - Utility functions.
+ */
+
+;(function(global, $, undefined) {
+  'use strict';
+
+  global.App.functions = (function() {
+    var module = {
+      isDefinedOrNotNull: function(object) {
+        return (typeof object !== 'undefined' || object !== null);
+      },
+      /**
+       * compact array by removing 0, false, null, '' and undefined.
+       *
+       * @param {Array} array An source array.
+       * @return {Array} The compacted array.
+       */
+      compact: function(array) {
+        var arr = $.isArray(array) ? array : [array];
+        return $.grep(arr, function(val, i) {
+          return !!val;
+        });
+      }
+    };
+
+    return module;
+  }());
+}(this, jQuery));
 
 /**
  * iterator.js - Data iterator.
@@ -74,14 +123,22 @@
         '<div></div>',
         '</div>'
       ].join(''),
-      isDefinedOrNotNull: function(object) {
-        return (typeof object !== 'undefined' || object !== null);
-      },
-      compact: function(array) {
-        var arr = $.isArray(array) ? array : [array];
-        return $.grep(arr, function(val, i) {
-          return !!val;
-        });
+      /**
+       * Tweet view html string.
+       *
+       * @param {string} avatar An avatar image path.
+       * @param {string} userLink User profile page url.
+       * @param {string} text A Tweet string.
+       * @return {string} Created Tweet HTML string.
+       */
+      tweetView: function(avatar, userLink, text) {
+        return [
+          '<div class="tw-content">',
+          '<img class="avatar" src="' + avatar + '" />',
+          '<p class="user">' + userLink + '</p>',
+          '<p class="text">' + text + '</p>',
+          '</div>'
+        ].join('');
       },
       createAnchor: function(url, text) {
         return [
@@ -105,20 +162,10 @@
 ;(function(global, $, undefined) {
   'use strict';
 
-  global.App.Tweet = (function() {
-    /**
-     * compact array by removing 0, false, false, '' and undefined.
-     *
-     * @param {Array} array An source array.
-     * @return {Array} The compacted array.
-     */
-    function compact(array) {
-      var arr = $.isArray(array) ? array : [array];
-      return $.grep(arr, function(val, i) {
-        return !!val;
-      });
-    }
+  var App = global.App,
+      functions = App.functions;
 
+  App.Tweet = (function() {
     /**
      * @type {Object} Parse link patterns in text.
      */
@@ -205,7 +252,7 @@
        * @return {Array} split token string list.
        */
       parseText: function(text, key) {
-        return compact(text.split(patterns[key]));
+        return functions.compact(text.split(patterns[key]));
       },
       _updateAttributes: function(attributes) {
         this._attributes = $.extend(
@@ -392,7 +439,8 @@
 ;(function(global, $, undefined) {
   'use strict';
 
-  var App = global.App;
+  var App = global.App,
+      functions = App.functions;
 
   App.View = (function() {
     // A signleton pointer.
@@ -424,7 +472,7 @@
             $search = $('.tw-search'),
             keyword = $search.val();
         $search.blur();
-        if (this.isDefinedOrNotNull(keyword)) {
+        if (functions.isDefinedOrNotNull(keyword)) {
           this.search(keyword);
         }
       },
@@ -485,13 +533,7 @@
           });
         dfd.resolve(item, text, ['url', 'user', 'hash']);
 
-        return [
-          '<div class="tw-content">',
-          '<img class="avatar" src="' + item.get('profile_image_url') + '" />',
-          '<p class="user">' + userLink + '</p>',
-          '<p class="text">' + text + '</p>',
-          '</div>'
-        ].join('');
+        return this.tweetView(item.get('profile_image_url'), userLink, text);
       },
       /**
        * テキスト中のリンク文字列を<a>タグに置き換え
@@ -527,7 +569,7 @@
 }(this, jQuery));
 
 /*!
- * bootstrap.js - Setup scripts with Loading application.
+ * bootstrap.js - Setup and Load application.
  */
 
 ;(function(global, $, undefined) {
